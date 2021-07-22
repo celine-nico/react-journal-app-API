@@ -3,7 +3,7 @@ class JournalsController < ApplicationController
 
   # GET /journals
   def index
-    @journals = Journal.all
+    @journals = Journal.order(date: :desc) #use sort method, sort by date attribute
 
     render json: @journals
   end
